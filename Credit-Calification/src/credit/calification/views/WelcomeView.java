@@ -1,24 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package credit.calification.views;
-import credit.calification.controllers.CreditController;
+import credit.calification.controllers.EventHandler;
+import credit.calification.controllers.MotorController;
 
 import javax.swing.JFrame;
 
 /**
- *
- * @author Kattya Desiderio
+ * Grupo 10: 
+ * @author: Kattya Desiderio
+ * @author: Stephany Quimba
+ * @author: Joyce Sarmiento
+ * @version: 06/02/2016/
  */
 public class WelcomeView extends javax.swing.JFrame {
 
     /**
      * Creates new form WelcomeView
      */
+    
     public WelcomeView() {
-        initComponents();
+       initComponents(); 
     }
 
     /**
@@ -88,9 +88,9 @@ public class WelcomeView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enterActionPerformed
-        new AplicationForm().setVisible(true);
+        PreForm pf = new PreForm();
+        pf.setVisible(true);
         this.setVisible(false);
-
     }//GEN-LAST:event_btn_enterActionPerformed
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
@@ -124,12 +124,11 @@ public class WelcomeView extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new WelcomeView().setVisible(true);
-            }
-        });
+        /* Call the constructor of the WelcomeView and display it. */
+     
+        WelcomeView w = new WelcomeView();
+        w.setVisible(true);
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -7,6 +7,13 @@ import jess.Value;
 
 import java.util.Iterator;
 
+/**
+ * Grupo 10: 
+ * @author: Kattya Desiderio
+ * @author: Stephany Quimba
+ * @author: Joyce Sarmiento
+ * @version: 06/02/2016/
+ */
 
 public class Helper {
     Rete motor;

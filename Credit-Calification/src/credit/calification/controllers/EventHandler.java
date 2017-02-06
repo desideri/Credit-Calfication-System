@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package credit.calification.controllers;
 
 import credit.calification.util.Helper;
 import credit.calification.views.AplicationForm;
 import jess.*;
 
+/**
+ * Grupo 10: 
+ * @author: Kattya Desiderio
+ * @author: Stephany Quimba
+ * @author: Joyce Sarmiento
+ * @version: 06/02/2016/
+ */
 
 public class EventHandler implements JessListener{
 

@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package credit.calification.views;
 
 import credit.calification.controllers.EventHandler;
 import credit.calification.controllers.MotorController;
-import credit.calification.controllers.CreditController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -18,21 +12,25 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
- * @author Kattya Desiderio
+ * Grupo 10: 
+ * @author: Kattya Desiderio
+ * @author: Stephany Quimba
+ * @author: Joyce Sarmiento
+ * @version: 06/02/2016/
  */
+
 public class AplicationForm extends javax.swing.JFrame {
 
-    private MotorController motorController;
+    public MotorController motorController;
     String edad,tuvoCreditos,montoBajo,montoAlto,plazoBajo,plazoAlto;
     String poseeTarjetaCredito,pagaATiempo,frecuenciaUsoTC,estadoCivil;
     String femenino,masculino,soltero,casado;
  
     
-    public AplicationForm() {
+    public AplicationForm(MotorController motorController){
         initComponents();
-        
-        
+        this.motorController = motorController;
+       
         this.setVisible(true);
     }
 
@@ -68,7 +66,6 @@ public class AplicationForm extends javax.swing.JFrame {
         cb_poseeTarjetaCredito = new javax.swing.JCheckBox();
         cb_montoAlto = new javax.swing.JCheckBox();
         cb_montoBajo = new javax.swing.JCheckBox();
-        btn_check = new javax.swing.JButton();
         cb_plazoBajo = new javax.swing.JCheckBox();
         cb_frecuenciaUsoTC = new javax.swing.JCheckBox();
         cb_tuvoCreditos = new javax.swing.JCheckBox();
@@ -81,7 +78,7 @@ public class AplicationForm extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(743, 743));
         getContentPane().setLayout(null);
         getContentPane().add(txt_CI);
-        txt_CI.setBounds(140, 110, 136, 20);
+        txt_CI.setBounds(140, 110, 230, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("CI / RUC:");
@@ -91,21 +88,21 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("If the answer is NO leave the square in blank");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 300, 290, 17);
+        jLabel4.setBounds(60, 350, 290, 17);
         getContentPane().add(txt_nombre);
-        txt_nombre.setBounds(140, 140, 227, 20);
+        txt_nombre.setBounds(140, 150, 227, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Surname:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 170, 60, 17);
+        jLabel5.setBounds(60, 200, 60, 17);
         getContentPane().add(txt_apellido);
-        txt_apellido.setBounds(140, 170, 228, 20);
+        txt_apellido.setBounds(140, 190, 230, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Age:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(90, 200, 40, 17);
+        jLabel6.setBounds(90, 240, 40, 17);
 
         txt_edad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,12 +110,12 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_edad);
-        txt_edad.setBounds(140, 200, 50, 20);
+        txt_edad.setBounds(140, 230, 60, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Location:");
+        jLabel8.setText("Address:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 230, 57, 17);
+        jLabel8.setBounds(60, 280, 57, 17);
 
         txt_direccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_direccion.setAutoscrolls(false);
@@ -128,12 +125,12 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txt_direccion);
-        txt_direccion.setBounds(140, 230, 222, 20);
+        txt_direccion.setBounds(140, 270, 230, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel9.setText("Credit Application ");
+        jLabel9.setText("Credit Application Form");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(120, 20, 387, 58);
+        jLabel9.setBounds(80, 20, 530, 58);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("Sex:");
@@ -174,7 +171,7 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText(" Credit references");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(40, 270, 210, 17);
+        jLabel16.setBounds(50, 320, 210, 17);
 
         btn_enviar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_enviar.setText("Send");
@@ -187,7 +184,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_enviar);
-        btn_enviar.setBounds(530, 440, 90, 27);
+        btn_enviar.setBounds(300, 630, 90, 27);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jLabel19);
@@ -195,7 +192,7 @@ public class AplicationForm extends javax.swing.JFrame {
 
         cb_poseeTarjetaCredito.setText("Has credit cards?");
         getContentPane().add(cb_poseeTarjetaCredito);
-        cb_poseeTarjetaCredito.setBounds(100, 500, 200, 23);
+        cb_poseeTarjetaCredito.setBounds(110, 550, 200, 23);
 
         cb_montoAlto.setText("amount equals or greater than 31 000");
         cb_montoAlto.setToolTipText("");
@@ -205,7 +202,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_montoAlto);
-        cb_montoAlto.setBounds(130, 380, 230, 23);
+        cb_montoAlto.setBounds(140, 430, 230, 23);
 
         cb_montoBajo.setText("amount equals or less than 30 000");
         cb_montoBajo.setToolTipText("");
@@ -215,19 +212,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_montoBajo);
-        cb_montoBajo.setBounds(130, 360, 210, 23);
-
-        btn_check.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btn_check.setText("Check");
-        btn_check.setToolTipText("Validate the information within the credit bureau");
-        btn_check.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_check.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_checkActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_check);
-        btn_check.setBounds(530, 480, 90, 31);
+        cb_montoBajo.setBounds(140, 410, 210, 23);
 
         cb_plazoBajo.setText("credit term equals or less than 10 years*");
         cb_plazoBajo.setToolTipText("");
@@ -237,7 +222,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_plazoBajo);
-        cb_plazoBajo.setBounds(130, 410, 230, 23);
+        cb_plazoBajo.setBounds(140, 460, 230, 23);
 
         cb_frecuenciaUsoTC.setText("Uses them often?*");
         cb_frecuenciaUsoTC.setToolTipText("");
@@ -247,7 +232,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_frecuenciaUsoTC);
-        cb_frecuenciaUsoTC.setBounds(140, 530, 170, 23);
+        cb_frecuenciaUsoTC.setBounds(150, 580, 170, 23);
 
         cb_tuvoCreditos.setText("had a previous bank loan?*");
         cb_tuvoCreditos.addActionListener(new java.awt.event.ActionListener() {
@@ -256,16 +241,16 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_tuvoCreditos);
-        cb_tuvoCreditos.setBounds(100, 330, 170, 23);
+        cb_tuvoCreditos.setBounds(110, 380, 170, 23);
 
         cb_pagaATiempo.setText("Make payments before deadline*");
         getContentPane().add(cb_pagaATiempo);
-        cb_pagaATiempo.setBounds(100, 470, 200, 23);
+        cb_pagaATiempo.setBounds(110, 520, 200, 23);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Name:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(80, 140, 40, 17);
+        jLabel7.setBounds(80, 160, 40, 17);
 
         cb_plazoAlto.setText("credit term equals or greater than 11 years*");
         cb_plazoAlto.setToolTipText("");
@@ -275,7 +260,7 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_plazoAlto);
-        cb_plazoAlto.setBounds(130, 430, 270, 23);
+        cb_plazoAlto.setBounds(140, 480, 270, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,37 +282,37 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_solteroActionPerformed
 
     public String getEdad(){
-     String edadRaw = "OutLimits";
-     int edad = 0;
-     if(txt_edad.getText().equals("")){
-         edadRaw = "OutLimits";
-     }
-     else{
-     edad = Integer.parseInt(txt_edad.getText());
-     if(edad > 21 && edad <= 37 ){
-      edadRaw = "J";
-     }
-     else if (edad > 37 && edad <= 70 ){
-         edadRaw = "A";
-     }
-     else if (edad < 0 || edad <21 || edad > 70){
-         edadRaw = "OutLimits";
-     }
-     }
-        return edadRaw;
+        String edadRaw = "OutLimits";
+        int edad = 0;
+        if(txt_edad.getText().equals("")){
+            edadRaw = "OutLimits";
+        }
+        else{
+        edad = Integer.parseInt(txt_edad.getText());
+        if(edad > 21 && edad <= 37 ){
+         edadRaw = "J";
+        }
+        else if (edad > 37 && edad <= 70 ){
+            edadRaw = "A";
+        }
+        else if (edad < 0 || edad <21 || edad > 70){
+            edadRaw = "OutLimits";
+        }
+        }
+           return edadRaw;
     }
     
     public String getEstadoCivil(){
-      String estadoCivil = "";
-      soltero = Boolean.toString(btn_soltero.isSelected());
-      casado = Boolean.toString(btn_casado.isSelected());
-         if(soltero.equals("true") && casado.equals("false")){
-         estadoCivil = "S";
-     }
-     else{
-         estadoCivil = "C";
-         }
-      return estadoCivil;
+        String estadoCivil = "";
+        soltero = Boolean.toString(btn_soltero.isSelected());
+        casado = Boolean.toString(btn_casado.isSelected());
+           if(soltero.equals("true") && casado.equals("false")){
+           estadoCivil = "S";
+       }
+       else{
+           estadoCivil = "C";
+           }
+        return estadoCivil;
     }
     
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
@@ -354,7 +339,6 @@ public class AplicationForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Age not permited","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
             }
             else{
-            //(= ?frecuenciaUsoTC false) (= ?pagaATiempo true) (= ?plazoBajo true) (= ?edad J) (= ?estadoCivil C)(= ?poseeTarjetaCredito true) 
             hecho = "(credit-calification "+
                     "(frecuenciaUsoTC "+ frecuenciaUsoTC + ")"+
                     "(pagaATiempo "+ pagaATiempo + ")"+
@@ -367,8 +351,7 @@ public class AplicationForm extends javax.swing.JFrame {
                     "(montoAlto "+ montoAlto + ")"+
                     "(montoBajo "+ montoBajo + ")"+
                     ")";
-           
-//            System.out.println(hecho);
+
             this.motorController.afirmar(hecho);
             }
            
@@ -386,10 +369,6 @@ public class AplicationForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_montoBajoActionPerformed
 
-    private void btn_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_checkActionPerformed
-
-    }//GEN-LAST:event_btn_checkActionPerformed
-
     private void cb_plazoBajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_plazoBajoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_plazoBajoActionPerformed
@@ -403,7 +382,21 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_plazoAltoActionPerformed
 
     private void cb_tuvoCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tuvoCreditosActionPerformed
-        // TODO add your handling code here:
+        String tuvoCredito = Boolean.toString(cb_tuvoCreditos.isSelected());
+        
+        if(tuvoCredito.equals("false")){
+            cb_montoBajo.setEnabled(false);
+            cb_montoAlto.setEnabled(false);
+            cb_plazoBajo.setEnabled(false);
+            cb_plazoAlto.setEnabled(false);
+            
+        }
+        else{
+            cb_montoBajo.setEnabled(true);
+            cb_montoAlto.setEnabled(true);
+            cb_plazoBajo.setEnabled(true);
+            cb_plazoAlto.setEnabled(true);
+        }
     }//GEN-LAST:event_cb_tuvoCreditosActionPerformed
          
     /**
@@ -465,20 +458,20 @@ public class AplicationForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AplicationForm().setVisible(true);
-                
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new AplicationForm().setVisible(true);
+//                
+//            }
+//        });
     }
+    
     public void setMotorController(MotorController motorController){
         this.motorController = motorController;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton btn_casado;
-    private javax.swing.JButton btn_check;
     private javax.swing.JButton btn_enviar;
     private javax.swing.JRadioButton btn_femenino;
     private javax.swing.JRadioButton btn_masculino;

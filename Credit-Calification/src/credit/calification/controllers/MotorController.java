@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package credit.calification.controllers;
 
 import java.util.logging.Level;
@@ -11,6 +6,13 @@ import jess.JessEvent;
 import jess.JessException;
 import jess.Rete;
 
+/**
+ * Grupo 10: 
+ * @author: Kattya Desiderio
+ * @author: Stephany Quimba
+ * @author: Joyce Sarmiento
+ * @version: 06/02/2016/
+ */
 
 public class MotorController{
     Rete motor;
