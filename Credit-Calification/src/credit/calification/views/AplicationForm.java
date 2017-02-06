@@ -29,6 +29,13 @@ public class AplicationForm extends javax.swing.JFrame {
     
     public AplicationForm(MotorController motorController){
         initComponents();
+        cb_montoBajo.setEnabled(false);
+        cb_montoAlto.setEnabled(false);
+        cb_plazoBajo.setEnabled(false);
+        cb_plazoAlto.setEnabled(false);
+        cb_frecuenciaUsoTC.setEnabled(false); 
+        btn_casado.setEnabled(false);
+        btn_masculino.setEnabled(false);
         this.motorController = motorController;
        
         this.setVisible(true);
@@ -147,6 +154,11 @@ public class AplicationForm extends javax.swing.JFrame {
         btn_femenino.setBounds(560, 103, 90, 20);
 
         btn_masculino.setText("Male");
+        btn_masculino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_masculinoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_masculino);
         btn_masculino.setBounds(560, 123, 93, 20);
 
@@ -165,6 +177,11 @@ public class AplicationForm extends javax.swing.JFrame {
         btn_soltero.setBounds(560, 153, 70, 20);
 
         btn_casado.setText("Married");
+        btn_casado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_casadoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_casado);
         btn_casado.setBounds(560, 173, 93, 20);
 
@@ -191,6 +208,11 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel19.setBounds(30, 310, 110, 0);
 
         cb_poseeTarjetaCredito.setText("Has credit cards?");
+        cb_poseeTarjetaCredito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_poseeTarjetaCreditoActionPerformed(evt);
+            }
+        });
         getContentPane().add(cb_poseeTarjetaCredito);
         cb_poseeTarjetaCredito.setBounds(110, 550, 200, 23);
 
@@ -274,11 +296,25 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_direccionActionPerformed
 
     private void btn_femeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_femeninoActionPerformed
-        // TODO add your handling code here:
+       String femenino = Boolean.toString(btn_femenino.isSelected());
+        
+        if(femenino.equals("false")){
+            btn_masculino.setEnabled(true); 
+        }
+        else{
+            btn_masculino.setEnabled(false);
+        }
     }//GEN-LAST:event_btn_femeninoActionPerformed
 
     private void btn_solteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_solteroActionPerformed
-        // TODO add your handling code here:
+        String soltero = Boolean.toString(btn_soltero.isSelected());
+        
+        if(soltero.equals("false")){
+            btn_casado.setEnabled(true); 
+        }
+        else{
+            btn_casado.setEnabled(false);
+        }
     }//GEN-LAST:event_btn_solteroActionPerformed
 
     public String getEdad(){
@@ -362,15 +398,36 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_enviarActionPerformed
 
     private void cb_montoAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_montoAltoActionPerformed
-        // TODO add your handling code here:
+       String montoAlto = Boolean.toString(cb_montoAlto.isSelected());
+        
+        if(montoAlto.equals("false")){
+            cb_montoBajo.setEnabled(true); 
+        }
+        else{
+            cb_montoBajo.setEnabled(false);
+        }
     }//GEN-LAST:event_cb_montoAltoActionPerformed
 
     private void cb_montoBajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_montoBajoActionPerformed
-        // TODO add your handling code here:
+        String montoBajo = Boolean.toString(cb_montoBajo.isSelected());
+        
+        if(montoBajo.equals("false")){
+            cb_montoAlto.setEnabled(true); 
+        }
+        else{
+            cb_montoAlto.setEnabled(false);
+        }
     }//GEN-LAST:event_cb_montoBajoActionPerformed
 
     private void cb_plazoBajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_plazoBajoActionPerformed
-        // TODO add your handling code here:
+       String plazoBajo = Boolean.toString(cb_plazoBajo.isSelected());
+        
+        if(plazoBajo.equals("false")){
+            cb_plazoAlto.setEnabled(true); 
+        }
+        else{
+            cb_plazoAlto.setEnabled(false);
+        }
     }//GEN-LAST:event_cb_plazoBajoActionPerformed
 
     private void cb_frecuenciaUsoTCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_frecuenciaUsoTCActionPerformed
@@ -378,7 +435,14 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_frecuenciaUsoTCActionPerformed
 
     private void cb_plazoAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_plazoAltoActionPerformed
-        // TODO add your handling code here:
+      String plazoAlto = Boolean.toString(cb_plazoAlto.isSelected());
+        
+        if(plazoAlto.equals("false")){
+            cb_plazoBajo.setEnabled(true); 
+        }
+        else{
+            cb_plazoBajo.setEnabled(false);
+        }
     }//GEN-LAST:event_cb_plazoAltoActionPerformed
 
     private void cb_tuvoCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tuvoCreditosActionPerformed
@@ -398,6 +462,39 @@ public class AplicationForm extends javax.swing.JFrame {
             cb_plazoAlto.setEnabled(true);
         }
     }//GEN-LAST:event_cb_tuvoCreditosActionPerformed
+
+    private void cb_poseeTarjetaCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_poseeTarjetaCreditoActionPerformed
+        String poseeTarjetaCredito = Boolean.toString(cb_poseeTarjetaCredito.isSelected());
+        
+        if(poseeTarjetaCredito.equals("false")){
+            cb_frecuenciaUsoTC.setEnabled(false); 
+        }
+        else{
+            cb_frecuenciaUsoTC.setEnabled(true);
+        }
+    }//GEN-LAST:event_cb_poseeTarjetaCreditoActionPerformed
+
+    private void btn_casadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_casadoActionPerformed
+        String casado = Boolean.toString(btn_casado.isSelected());
+        
+        if(casado.equals("false")){
+            btn_soltero.setEnabled(true); 
+        }
+        else{
+            btn_soltero.setEnabled(false);
+        }
+    }//GEN-LAST:event_btn_casadoActionPerformed
+
+    private void btn_masculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masculinoActionPerformed
+        String masculino = Boolean.toString(btn_masculino.isSelected());
+        
+        if(masculino.equals("false")){
+            btn_femenino.setEnabled(true); 
+        }
+        else{
+            btn_femenino.setEnabled(false);
+        }
+    }//GEN-LAST:event_btn_masculinoActionPerformed
          
     /**
      * @param args the command line arguments
